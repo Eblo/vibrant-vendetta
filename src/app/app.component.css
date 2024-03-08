@@ -4,7 +4,8 @@
 }
 
 .main-content {
-    width: 75em;
+    max-width: 75em;
+    min-width: 20em;
     text-align: center;
     margin: 0 auto;
 }
