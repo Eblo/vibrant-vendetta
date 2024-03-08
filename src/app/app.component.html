@@ -1,0 +1,32 @@
+<!--Header/Toolbar -->
+<p-toolbar>
+  <div class="p-toolbar-group-start">
+  </div>
+  <div class="p-toolbar-group-center">
+    <span *ngFor="let item of appConfig.menu" class="menu-button">
+      <p-button label="{{item.label}}" [outlined]="item.label != currentPage" (onClick)="navigateTo(item)"></p-button>
+    </span>
+  </div>
+  <div class="p-toolbar-group-end">
+  </div>
+</p-toolbar>
+
+<!-- Current page content -->
+<div class="main-content">
+  <router-outlet />
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <p>{{appConfig.copyright}}</p>
+</div>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-G3GLMZX3X1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-G3GLMZX3X1');
+</script>

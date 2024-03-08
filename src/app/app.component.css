@@ -1,0 +1,15 @@
+.menu-button {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+.main-content {
+    width: 75em;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.footer {
+    margin: 0 auto;
+    text-align: center;
+}

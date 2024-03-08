@@ -1,0 +1,10 @@
+{
+    
+    "title": "Vibrant Vendetta",
+    "copyright": "© Vibrant Vendetta, LLC",
+    "menu": [
+        { "label": "Home", "routerLink": "/" },
+        { "label": "Games", "routerLink": "/eulogy" },
+        { "label": "Contact", "routerLink": "/contact" }
+    ]
+}
