@@ -1,3 +1,6 @@
 <p-card header="Contact">
-    We can be reached on Twitter, Bluesky, Discord, Tumblr, and more. TBD.
+    We can be reached via the following:
+    <div *ngFor="let item of contactLinks" class="menu-button">
+        <a [href]="item.routerLink" target="_blank"><i [class]="item.icon"></i>{{item.label}}</a>
+    </div>
 </p-card>

@@ -6,6 +6,8 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { ButtonModule } from 'primeng/button';
 import { AppConfig, AppConfigService } from './app-config.service';
 
+const defaultPage: string = 'Home';
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -22,22 +24,23 @@ import { AppConfig, AppConfigService } from './app-config.service';
 })
 
 export class AppComponent {
-  appConfig: AppConfig = {title: '', copyright: '', menu: []};
-  items: MenuItem[] = [];
+  appConfig: AppConfig = {title: '', copyright: '', menu: [], contact: []};
 
   activeItem: MenuItem | undefined;
-  currentPage: string = 'Home';
+  currentPage: string = defaultPage;
 
   constructor(private router: Router, appConfig: AppConfigService) {
     this.router = router;
     appConfig.loadAppConfig().subscribe(config => {
       this.appConfig = config as AppConfig;
+      // Highlight the button matching the current page, defaulting to Home if no match
+      this.activeItem = this.appConfig.menu.find((menuItem) => menuItem.routerLink == this.router.url) || this.appConfig.menu[0];
+      this.currentPage = this.activeItem.label || defaultPage;
     });
   }
 
   navigateTo(item: MenuItem): void {
-    console.log(item);
-    this.currentPage = item.label || 'Home';
+    this.currentPage = item.label || defaultPage;
     this.router.navigate([item.routerLink]);
   }
 }

@@ -6,5 +6,10 @@
         { "label": "Home", "routerLink": "/" },
         { "label": "Games", "routerLink": "/eulogy" },
         { "label": "Contact", "routerLink": "/contact" }
+    ],
+    "contact": [
+        { "icon": "pi pi-twitter", "label": "@eulogyinsect", "routerLink": "https://twitter.com/eulogyinsect" },
+        { "icon": "pi pi-share-alt", "label": "eulogyofaninsect on Tumblr", "routerLink": "https://eulogyofaninsect.tumblr.com/" },
+        { "icon": "pi pi-discord", "label": "Eulogy of an Insect Official Discord", "routerLink": "https://discord.gg/aqRbQ3gtjr" }
     ]
 }
